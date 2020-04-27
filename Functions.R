@@ -119,7 +119,7 @@ ar.sim <- function(n, mu, sigma, phi, padding = 100) {
 mc.sim_pacf = function(n, phi, mu, sigma){
   phi.est=vector()
   
-  for (i in 1:10) {
+  for (i in 1:10000) {
     y = ar.sim(n, mu, sigma, phi)
     phi.est[i] = Autocorrelation(y, maxlag = 2, plotting = FALSE)[2]
   }
